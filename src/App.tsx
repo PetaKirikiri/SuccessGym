@@ -13,6 +13,7 @@ const experiences = [
 
 const gymAddress = '83/22 Soi Hat Chaweng 4, Bo Phut, Koh Samui, Surat Thani 84320, Thailand'
 const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Success%20Gym%20Samui%2C%2083%2F22%20Soi%20Hat%20Chaweng%204%2C%20Bo%20Phut%2C%20Koh%20Samui%2C%20Surat%20Thani%2084320'
+const googleMapsEmbedUrl = 'https://www.google.com/maps?q=Success%20Gym%20Samui%2C%2083%2F22%20Soi%20Hat%20Chaweng%204%2C%20Bo%20Phut%2C%20Koh%20Samui%2C%20Surat%20Thani%2084320&output=embed'
 
 function Home() {
   return (
@@ -113,6 +114,17 @@ function Home() {
               <a href={googleMapsUrl} target="_blank" rel="noreferrer" className="bg-black px-8 py-4 text-sm font-black uppercase tracking-wider text-white transition hover:bg-zinc-900">Get directions →</a>
               <a href="mailto:hello@successgym.com" className="border-2 border-black px-8 py-4 text-sm font-black uppercase tracking-wider text-black transition hover:bg-black hover:text-white">Contact us</a>
             </div>
+          </div>
+          <div className="relative mt-10 aspect-[4/3] overflow-hidden border-4 border-black bg-zinc-200 sm:aspect-[16/7]">
+            <iframe
+              src={googleMapsEmbedUrl}
+              title="Map showing Success Gym Samui"
+              className="absolute inset-0 size-full border-0 grayscale-[.2] contrast-[1.05]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            <a href={googleMapsUrl} target="_blank" rel="noreferrer" className="absolute bottom-4 left-4 bg-black px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-xl transition hover:bg-zinc-800">Open in Google Maps ↗</a>
           </div>
         </div>
       </section>
