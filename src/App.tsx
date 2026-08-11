@@ -11,6 +11,14 @@ const experiences = [
   { number: '06', title: 'Muscle Bistro', detail: 'Thoughtfully prepared, fitness-focused meals to fuel your training, recovery, and everyday life.' },
 ]
 
+const classSchedule = [
+  { day: 'Monday', sessions: [['9:00 AM', 'Yoga', 'K. Kim'], ['10:00 AM', 'Abs & Booty', 'K. Owen']] },
+  { day: 'Tuesday', sessions: [['9:00 AM', 'Pilates Mat', 'K. Tae'], ['10:00 AM', 'TRX Class', 'K. Owen']] },
+  { day: 'Wednesday', sessions: [['9:00 AM', 'Lady Muay Thai', 'K. Bird']] },
+  { day: 'Thursday', sessions: [['9:00 AM', 'Yoga', 'K. Mook'], ['10:00 AM', 'Functional Workout', 'K. Owen']] },
+  { day: 'Friday', sessions: [['10:00 AM', 'Trampoline Bounder', 'K. Owen'], ['11:00 AM', 'Stretching Class', 'K. Pino']] },
+]
+
 const gymAddress = '83/22 Soi Hat Chaweng 4, Bo Phut, Koh Samui, Surat Thani 84320, Thailand'
 const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Success%20Gym%20Samui%2C%2083%2F22%20Soi%20Hat%20Chaweng%204%2C%20Bo%20Phut%2C%20Koh%20Samui%2C%20Surat%20Thani%2084320'
 const googleMapsEmbedUrl = 'https://www.google.com/maps?q=Success%20Gym%20Samui%2C%2083%2F22%20Soi%20Hat%20Chaweng%204%2C%20Bo%20Phut%2C%20Koh%20Samui%2C%20Surat%20Thani%2084320&output=embed'
@@ -26,6 +34,7 @@ function Home() {
           </a>
           <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-wider md:flex" aria-label="Main navigation">
             <a className="transition hover:text-red-500" href="#experience">Experience</a>
+            <a className="transition hover:text-red-500" href="#classes">Classes</a>
             <a className="transition hover:text-red-500" href="#community">Community</a>
             <Link className="transition hover:text-red-500" to="/coaches">Coaches</Link>
           </nav>
@@ -63,6 +72,40 @@ function Home() {
               <p className="mt-4 leading-7 text-zinc-400 group-hover:text-white/80">{item.detail}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section id="classes" className="border-y border-white/10 bg-[#0d0d0d]">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-8 sm:py-28">
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_.85fr] lg:items-start">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[.25em] text-red-500">Weekly schedule · From 10 August 2026</p>
+              <h2 className="mt-4 text-4xl font-black uppercase leading-[.92] tracking-[-.045em] min-[390px]:text-5xl sm:text-6xl">Find your<br /><span className="text-red-600">next class.</span></h2>
+              <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
+                {classSchedule.map((item) => (
+                  <div key={item.day} className="grid gap-4 py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
+                    <h3 className="text-xl font-black uppercase">{item.day}</h3>
+                    <div className="space-y-4">
+                      {item.sessions.map(([time, name, coach]) => (
+                        <div key={`${item.day}-${time}`} className="grid grid-cols-[5.5rem_1fr] items-start gap-3">
+                          <time className="text-sm font-black text-red-500">{time}</time>
+                          <div><p className="font-black uppercase tracking-wide">{name}</p><p className="mt-1 text-xs font-bold uppercase tracking-wider text-zinc-500">{coach}</p></div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-7 space-y-2 text-sm leading-6 text-zinc-500">
+                <p>No advance registration; participation is first-come, first-served.</p>
+                <p>Classes with fewer than three attendees may be cancelled. Please arrive early for classes with limited equipment.</p>
+              </div>
+            </div>
+            <a href="/classes/class-schedule-aug-2026.png" target="_blank" rel="noreferrer" className="group relative block overflow-hidden border border-white/15 bg-black">
+              <img src="/classes/class-schedule-aug-2026.png" alt="Success Gym weekly class schedule starting 10 August 2026" className="w-full transition duration-500 group-hover:scale-[1.015]" loading="lazy" />
+              <span className="absolute bottom-4 right-4 bg-white px-4 py-3 text-[.65rem] font-black uppercase tracking-wider text-black shadow-xl">View full schedule ↗</span>
+            </a>
+          </div>
         </div>
       </section>
 
