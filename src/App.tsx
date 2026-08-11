@@ -11,6 +11,9 @@ const experiences = [
   { number: '06', title: 'Muscle Bistro', detail: 'Thoughtfully prepared, fitness-focused meals to fuel your training, recovery, and everyday life.' },
 ]
 
+const gymAddress = '83/22 Soi Hat Chaweng 4, Bo Phut, Koh Samui, Surat Thani 84320, Thailand'
+const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Success%20Gym%20Samui%2C%2083%2F22%20Soi%20Hat%20Chaweng%204%2C%20Bo%20Phut%2C%20Koh%20Samui%2C%20Surat%20Thani%2084320'
+
 function Home() {
   return (
     <main className="min-h-screen bg-[#070707] text-white">
@@ -99,14 +102,23 @@ function Home() {
         <div className="relative overflow-hidden bg-red-600 px-6 py-10 sm:px-14 sm:py-16">
           <div className="absolute -right-16 -top-32 size-80 rounded-full border-[50px] border-black/10" />
           <div className="relative flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
-            <div><p className="text-xs font-black uppercase tracking-[.25em] text-black/60">Train. Perform. Recover. Transform.</p><h2 className="mt-3 text-4xl font-black uppercase leading-none tracking-[-.05em] min-[390px]:text-5xl sm:text-6xl">Your complete fitness<br />destination.</h2></div>
-            <a href="mailto:hello@successgym.com" className="w-fit bg-black px-8 py-4 text-sm font-black uppercase tracking-wider text-white transition hover:bg-zinc-900">Contact the gym →</a>
+            <div>
+              <p className="text-xs font-black uppercase tracking-[.25em] text-black/60">Train. Perform. Recover. Transform.</p>
+              <h2 className="mt-3 text-4xl font-black uppercase leading-none tracking-[-.05em] min-[390px]:text-5xl sm:text-6xl">Your complete fitness<br />destination.</h2>
+              <a href={googleMapsUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex max-w-xl items-start gap-3 text-sm font-bold leading-6 text-black/70 transition hover:text-black" aria-label={`Open Success Gym Samui in Google Maps. ${gymAddress}`}>
+                <span aria-hidden="true">●</span><span>{gymAddress}</span>
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a href={googleMapsUrl} target="_blank" rel="noreferrer" className="bg-black px-8 py-4 text-sm font-black uppercase tracking-wider text-white transition hover:bg-zinc-900">Get directions →</a>
+              <a href="mailto:hello@successgym.com" className="border-2 border-black px-8 py-4 text-sm font-black uppercase tracking-wider text-black transition hover:bg-black hover:text-white">Contact us</a>
+            </div>
           </div>
         </div>
       </section>
 
       <footer className="border-t border-white/10 px-5 py-8 text-sm text-zinc-500 sm:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 sm:flex-row"><p>© {new Date().getFullYear()} Success Gym Samui</p><p>Koh Samui, Thailand · Train. Perform. Recover. Transform.</p></div>
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 sm:flex-row"><p>© {new Date().getFullYear()} Success Gym Samui</p><a href={googleMapsUrl} target="_blank" rel="noreferrer" className="transition hover:text-white">83/22 Soi Hat Chaweng 4, Bo Phut, Koh Samui →</a></div>
       </footer>
     </main>
   )
