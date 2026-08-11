@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import { coaches } from './data/coaches'
 import Coaches from './pages/Coaches'
+import Experience from './pages/Experience'
 
 const experiences = [
   { number: '01', title: 'Premium training', detail: 'High-quality equipment and dedicated spaces for strength, functional training, and cardio.' },
@@ -184,6 +185,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/coaches" element={<Coaches />} />
+      <Route path="/experience" element={<Experience />} />
     </Routes>
   )
 }
