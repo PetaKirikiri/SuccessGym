@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from 'react-router-dom'
+import { Activity, CircleDot, Coffee, Dumbbell, Flame, HeartPulse, UtensilsCrossed } from 'lucide-react'
 import { coaches } from './data/coaches'
 import Coaches from './pages/Coaches'
 import Experience from './pages/Experience'
@@ -20,9 +21,20 @@ const classSchedule = [
   { day: 'Friday', sessions: [['10:00 AM', 'Trampoline Bounder', 'K. Owen'], ['11:00 AM', 'Stretching Class', 'K. Pino']] },
 ]
 
+const locationHighlights = [
+  { label: 'Weights', Icon: Dumbbell },
+  { label: 'Pilates', Icon: Activity },
+  { label: 'Padel', Icon: CircleDot },
+  { label: 'Massage', Icon: HeartPulse },
+  { label: 'Coffee', Icon: Coffee },
+  { label: 'Muay Thai', Icon: Flame },
+  { label: 'Food', Icon: UtensilsCrossed },
+]
+
 const gymAddress = '83/22 Soi Hat Chaweng 4, Bo Phut, Koh Samui, Surat Thani 84320, Thailand'
 const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Success%20Gym%20Samui%2C%2083%2F22%20Soi%20Hat%20Chaweng%204%2C%20Bo%20Phut%2C%20Koh%20Samui%2C%20Surat%20Thani%2084320'
 const googleMapsEmbedUrl = 'https://www.google.com/maps?q=Success%20Gym%20Samui%2C%2083%2F22%20Soi%20Hat%20Chaweng%204%2C%20Bo%20Phut%2C%20Koh%20Samui%2C%20Surat%20Thani%2084320&output=embed'
+const areaMapEmbedUrl = 'https://maps.google.com/maps?q=9.5363299,100.0548455&z=14&t=k&output=embed'
 
 function Home() {
   return (
@@ -53,6 +65,14 @@ function Home() {
           <div className="mt-7 grid gap-2 min-[390px]:grid-cols-2 sm:mt-9 sm:flex sm:flex-wrap sm:gap-3">
             <a href="#experience" className="bg-red-600 px-4 py-3.5 text-center text-xs font-black uppercase tracking-wider transition hover:bg-red-500 sm:px-7 sm:py-4 sm:text-sm">Explore the experience <span aria-hidden="true">→</span></a>
             <Link to="/coaches" className="border border-white/30 bg-black/30 px-4 py-3.5 text-center text-xs font-black uppercase tracking-wider transition hover:border-white sm:px-7 sm:py-4 sm:text-sm">Meet the coaches</Link>
+          </div>
+          <div className="mt-7 flex max-w-4xl gap-2 overflow-x-auto pb-2 sm:mt-9 sm:grid sm:grid-cols-7 sm:overflow-visible sm:pb-0" aria-label="Activities and amenities at Success Gym">
+            {locationHighlights.map(({ label, Icon }) => (
+              <div key={label} className="flex min-w-[6.4rem] flex-col items-center gap-2 border border-white/15 bg-black/45 px-3 py-3 text-center backdrop-blur-sm sm:min-w-0">
+                <Icon aria-hidden="true" size={19} strokeWidth={1.8} className="text-red-500" />
+                <span className="text-[.6rem] font-black uppercase tracking-[.14em] text-zinc-200">{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -144,6 +164,30 @@ function Home() {
       </section>
 
       <section id="visit" className="mx-auto max-w-7xl px-4 py-16 sm:px-8 sm:py-28">
+        <div className="mb-5 grid overflow-hidden border border-white/10 bg-[#0d0d0d] lg:grid-cols-[.68fr_1.32fr]">
+          <div className="flex flex-col justify-between p-6 sm:p-10">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[.25em] text-red-500">Around the location</p>
+              <h2 className="mt-4 text-4xl font-black uppercase leading-[.92] tracking-[-.045em] sm:text-5xl">The gym.<br />The lake.<br /><span className="text-zinc-600">All nearby.</span></h2>
+            </div>
+            <div className="mt-10 border-l-2 border-red-600 pl-4">
+              <p className="text-sm font-black uppercase tracking-wider">Chaweng Lake</p>
+              <p className="mt-2 text-sm leading-6 text-zinc-500">Use the top-down view to see Success Gym in relation to the lake and surrounding Chaweng area.</p>
+            </div>
+          </div>
+          <div className="relative aspect-square min-h-[24rem] bg-zinc-200 sm:aspect-[16/10] lg:aspect-auto">
+            <iframe
+              src={areaMapEmbedUrl}
+              title="Top-down map showing Success Gym and nearby Chaweng Lake"
+              className="absolute inset-0 size-full border-0 grayscale-[.1] contrast-[1.05]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            <div className="pointer-events-none absolute left-4 top-4 bg-black/85 px-4 py-3 text-xs font-black uppercase tracking-wider text-white shadow-xl backdrop-blur">Success Gym · Chaweng</div>
+            <a href={googleMapsUrl} target="_blank" rel="noreferrer" className="absolute bottom-4 right-4 bg-red-600 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-xl transition hover:bg-red-500">Explore the area ↗</a>
+          </div>
+        </div>
         <div className="relative overflow-hidden bg-red-600 px-6 py-10 sm:px-14 sm:py-16">
           <div className="absolute -right-16 -top-32 size-80 rounded-full border-[50px] border-black/10" />
           <div className="relative flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
