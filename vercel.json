@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/owner-demo/index.html" },
+    { "source": "/success-gym-wolf-mark.png", "destination": "/owner-demo/success-gym-wolf-mark.png" },
+    { "source": "/icons/:path*", "destination": "/owner-demo/icons/:path*" },
+    { "source": "/coaches/:path*", "destination": "/owner-demo/coaches/:path*" },
+    { "source": "/facilities/:path*", "destination": "/owner-demo/facilities/:path*" }
+  ]
+}
