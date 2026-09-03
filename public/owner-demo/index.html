@@ -111,7 +111,7 @@
     .membership-row span { color: #fff; font-size: 20px; font-weight: 950; }
     .membership-note { margin: 22px 0 0; color: #71717a; font-size: 12px; line-height: 1.65; }
     .opening-hours { margin-top: 16px; color: #d4d4d8; font-size: 16px; font-weight: 900; }
-    .coach-grid { margin-top: 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .coach-grid { margin-top: 52px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
     .coach-card { padding: 28px; display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 26px; border: 1px solid #ffffff18; border-radius: 20px; background: linear-gradient(145deg,#121212,#080808); }
     .coach-photos { width: 150px; display: flex; flex-direction: column; gap: 12px; }
     .coach-photo { width: 150px; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 3px solid #dc2626; }
@@ -125,6 +125,8 @@
     .coach-package small { display: block; margin-top: 7px; color: #71717a; line-height: 1.5; }
     .coach-contact { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
     .coach-contact a { padding: 10px 13px; border: 1px solid #ffffff18; color: #d4d4d8; font-size: 10px; font-weight: 900; letter-spacing: .04em; }
+    .coach-poster { overflow: hidden; border: 1px solid #ffffff18; background: #050505; }
+    .coach-poster img { display: block; width: 100%; height: auto; }
     .map-grid { display: grid; grid-template-columns: .65fr 1.35fr; border: 1px solid #ffffff18; background: #0d0d0d; }
     .map-copy { padding: 42px; display: flex; flex-direction: column; justify-content: space-between; }
     .map-copy h2 { font-size: clamp(42px,5vw,68px); }
@@ -141,6 +143,7 @@
     .close h2 { max-width: 900px; }
     .close a { flex: none; background: #050505; color: #fff; padding: 18px 25px; font-size: 12px; font-weight: 950; text-transform: uppercase; letter-spacing: .12em; }
     footer { padding: 28px 0; color: #71717a; font-size: 12px; border-top: 1px solid #ffffff12; }
+    @media (max-width: 1100px) and (min-width: 801px) { .coach-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
     @media (max-width: 800px) {
       .wrap { width: min(100% - 28px,1240px); }
       .demo { display: none; }
@@ -245,24 +248,18 @@
     <section class="section alt page-view" data-page="coaches" id="coaches"><div class="wrap">
       <div class="intro"><div><p class="eyebrow">Personal Training</p><h2>Meet your<br /><span class="red">coaches.</span></h2></div><p class="intro-copy">Professional personal training with private and small-group packages.</p></div>
       <div class="coach-grid">
-        <article class="coach-card">
-          <div class="coach-photos"><img class="coach-photo" src="coaches/coach-tong.jpg" alt="Coach Tong" /><img class="coach-photo" src="coaches/coach-tong-2.jpg" alt="Coach Tong at the airport" /></div>
-          <div><span class="coach-role">Personal Trainer</span><h3 class="coach-name">Coach Tong</h3><p class="coach-languages">Languages: Thai · English</p></div>
-          <div class="coach-packages">
-            <div class="coach-package"><strong>Private Class</strong><span class="package-price">฿9,000 · 12 sessions</span><small>1 person · Expires in 5 weeks</small></div>
-            <div class="coach-package"><strong>Group Class</strong><span class="package-price">฿6,000 · 12 sessions</span><small>2 people · Expires in 2 weeks</small></div>
-          </div>
-          <div class="coach-contact"><strong>Single session ฿1,000</strong><a href="https://wa.me/66828356425" target="_blank" rel="noreferrer">WhatsApp +66 82 835 6425</a><a href="tel:+66828356425">Call</a></div>
-        </article>
-        <article class="coach-card">
-          <div class="coach-photos"><img class="coach-photo" src="coaches/coach-boon.jpg" alt="Coach Boon" /><img class="coach-photo" src="coaches/coach-boon-2.jpg" alt="Coach Boon training" /></div>
-          <div><span class="coach-role">Personal Trainer</span><h3 class="coach-name">Coach Boon</h3><p class="coach-languages">Languages: Thai · English</p></div>
-          <div class="coach-packages">
-            <div class="coach-package"><strong>Private Class</strong><span class="package-price">฿10,000 · 10 sessions</span><small>1 person · Expires in 5 weeks</small></div>
-            <div class="coach-package"><strong>Group Class</strong><span class="package-price">฿7,000 · 10 sessions</span><small>2 people · Expires in 2 weeks</small></div>
-          </div>
-          <div class="coach-contact"><strong>Single session ฿1,200</strong><a href="https://wa.me/66826259397" target="_blank" rel="noreferrer">WhatsApp +66 82 625 9397</a><a href="https://line.me/ti/p/~somboonasa" target="_blank" rel="noreferrer">LINE somboonasa</a></div>
-        </article>
+        <figure class="coach-poster"><img src="coaches/posters/coach-1.jpg" alt="Coach Bia profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-2.jpg" alt="Coach Bert profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-3.jpg" alt="Coach Beat profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-4.jpg" alt="Coach Naw profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-5.jpg" alt="Coach Kim profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-6.jpg" alt="Coach Kwan profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-7.jpg" alt="Coach Pana profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-8.jpg" alt="Coach Owen profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-9.jpg" alt="Coach Nueng profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-10.jpg" alt="Coach Best profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-11.jpg" alt="Coach Pino profile and training prices" /></figure>
+        <figure class="coach-poster"><img src="coaches/posters/coach-12.jpg" alt="Coach Ann profile and training prices" /></figure>
       </div>
     </div></section>
 
@@ -359,32 +356,6 @@
     }
     window.addEventListener('hashchange', showPage);
     showPage();
-
-    const originalCoaches = [
-      { slug:'bia', name:'Coach Bia', role:'Muay Thai Coach', languages:'Thai · English', privatePrice:'฿9,500 · 10 sessions', privateNote:'1 person · Expires in 5 weeks', groupPrice:'฿5,500 · 5 sessions', groupNote:'1 person · Expires in 4 weeks', single:'฿1,200', line:'nongtangmo20', whatsapp:'66952632882' },
-      { slug:'bert', name:'Coach Bert', role:'Muay Thai Coach', languages:'Thai · English', privatePrice:'฿9,500 · 10 sessions', privateNote:'1 person · Expires in 5 weeks', groupPrice:'฿5,500 · 5 sessions', groupNote:'1 person · Expires in 4 weeks', single:'฿1,200', line:'nongtangmo20', whatsapp:'66952632882' },
-      { slug:'beat', name:'Coach Beat', role:'Personal Trainer', languages:'Thai', privatePrice:'฿7,500 · 12 sessions', privateNote:'1 person · Expires in 5 weeks', groupPrice:'฿4,500 · 12 sessions', groupNote:'2–3 people · Expires in 5 weeks', single:'฿900', line:'kraisak-06', whatsapp:'66641955997' },
-      { slug:'naw', name:'Coach Naw', role:'Personal Trainer', languages:'Thai', privatePrice:'฿9,000 · 15 sessions', privateNote:'1 person · Expires in 60 days', groupPrice:'฿6,000 · 15 sessions', groupNote:'2 people · Expires in 45 days', single:'฿900', line:'0865535204', whatsapp:'66865535204' },
-      { slug:'kim', name:'Coach Kim', role:'Personal Trainer', languages:'Thai · English', privatePrice:'฿10,000 · 12 sessions', privateNote:'1 person · Expires in 5 weeks', groupPrice:'฿5,000 · 12 sessions', groupNote:'2–4 people · Expires in 5 weeks', single:'฿1,000', line:'wakim2531', whatsapp:'66801485539' },
-      { slug:'kwan', name:'Coach Kwan', role:'Personal Trainer', languages:'Thai', privatePrice:'฿10,000 · 15 sessions', privateNote:'1 person · Expires in 5 weeks', groupPrice:'฿5,000 · 12 sessions', groupNote:'2–4 people · Expires in 5 weeks', single:'฿1,000', line:'naprai', whatsapp:'66891887014' },
-      { slug:'pana', name:'Coach Pana', role:'Personal Trainer', languages:'Thai', privatePrice:'฿10,000 · 15 sessions', privateNote:'1 person · Expires in 5 weeks', groupPrice:'฿4,500 · 15 sessions', groupNote:'2–3 people · Expires in 5 weeks', single:'฿1,000', line:'0896525005', whatsapp:'66896525005' },
-      { slug:'owen', name:'Coach Owen', role:'Personal Trainer', languages:'Thai · English · Filipino', privatePrice:'฿10,000 · 12 sessions', privateNote:'1 person · Expires in 5 weeks', groupPrice:'฿7,000 · 12 sessions', groupNote:'2–3 people · Expires in 5 weeks', single:'฿1,300', line:'0656259989', whatsapp:'66656259989' },
-      { slug:'nueng', name:'Coach Nueng', role:'Personal Trainer', languages:'Thai · English', privatePrice:'฿8,000 · 10 sessions', privateNote:'1 person · Expires in 4 weeks', groupPrice:'฿5,000 · 10 sessions', groupNote:'2–3 people · Expires in 4 weeks', single:'฿1,200', line:'Mgis003', whatsapp:'66807788841' },
-      { slug:'best', name:'Coach Best', role:'Personal Trainer · Sports Therapist', languages:'Thai', privatePrice:'฿8,000 · 12 sessions', privateNote:'1 person · Expires in 60 days', groupLabel:'Sports Therapist', groupPrice:'฿10,000 · 10 sessions', groupNote:'Or ฿1,200 per session · Expires in 60 days', single:'฿700–1,200', line:'Narutcha24', whatsapp:'66929725371' },
-      { slug:'pino', name:'Coach Pino', role:'Personal Trainer', languages:'Thai · English · Italian', privatePrice:'฿10,000 · 12 sessions', privateNote:'1 person · Expires in 4 weeks', groupPrice:'฿5,000 · 12 sessions', groupNote:'3–4 people · Expires in 4 weeks', single:'฿1,000', line:'pinothai', whatsapp:'66842684966' },
-      { slug:'ann', name:'Coach Ann', role:'Personal Trainer', languages:'Thai · English', privatePrice:'฿12,500 · 15 sessions', privateNote:'1 person · Expires in 5 weeks', groupPrice:'฿7,500 · 15 sessions', groupNote:'2–3 people · Expires in 5 weeks', single:'฿1,300', line:'annie0918208415', whatsapp:'66623462477' }
-    ];
-    const coachGrid = document.querySelector('.coach-grid');
-    coachGrid.insertAdjacentHTML('afterbegin', originalCoaches.map((coach) => `
-      <article class="coach-card">
-        <img class="coach-photo" src="coaches/coach-${coach.slug}.jpg" alt="${coach.name}" />
-        <div><span class="coach-role">${coach.role}</span><h3 class="coach-name">${coach.name}</h3><p class="coach-languages">Languages: ${coach.languages}</p></div>
-        <div class="coach-packages">
-          <div class="coach-package"><strong>Private Class</strong><span class="package-price">${coach.privatePrice}</span><small>${coach.privateNote}</small></div>
-          <div class="coach-package"><strong>${coach.groupLabel || 'Group Class'}</strong><span class="package-price">${coach.groupPrice}</span><small>${coach.groupNote}</small></div>
-        </div>
-        <div class="coach-contact"><strong>Single session ${coach.single}</strong><a href="https://wa.me/${coach.whatsapp}" target="_blank" rel="noreferrer">WhatsApp +${coach.whatsapp}</a><span>LINE ${coach.line}</span></div>
-      </article>`).join(''));
 
     // Individual dish photography will be added here once the original source
     // photos are supplied. Flattened printed-menu composites do not produce
