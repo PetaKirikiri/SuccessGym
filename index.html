@@ -345,7 +345,8 @@
     const pageTitles = { home:'Success Gym Samui', clubs:'Success Clubs', classes:'Classes', coaches:'Coaches', prices:'Prices', food:'Muscle Bistro', contact:'Contact & Location' };
     function showPage() {
       const requested = location.hash.slice(1);
-      const page = pageNames.has(requested) ? requested : 'home';
+      const pathPage = location.pathname.replace(/^\/+|\/+$/g, '');
+      const page = pageNames.has(requested) ? requested : pathPage === 'coaches' ? 'coaches' : 'home';
       document.querySelectorAll('.page-view').forEach((view) => view.classList.toggle('is-active', view.dataset.page === page));
       document.querySelectorAll('.nav-link[data-tab]').forEach((link) => {
         if (link.dataset.tab === page) link.setAttribute('aria-current','page');
