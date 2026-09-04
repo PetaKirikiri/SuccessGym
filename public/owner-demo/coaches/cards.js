@@ -37,7 +37,7 @@
   function portrait(index, second = false) {
     if (index >= 12) {
       const name = rows[index][0];
-      return `<img class="cp-photo" src="${new URL(`coach-${name.toLowerCase()}${second?'-2':''}.jpg`,base)}" alt="Coach ${name} ${second?'second photo':'portrait'}" />`;
+      return `<img class="cp-photo" src="${new URL(`coach-${name.toLowerCase()}${second||name==='Boon'?'-2':''}.jpg`,base)}" alt="Coach ${name} ${second?'second photo':'portrait'}" />`;
     }
     const y = second ? 443 : 28;
     const x = second ? 22 : 28;
@@ -51,7 +51,7 @@
     if (!expanded) article.classList.add('cp-card-clickable');
     article.dataset.coach = name;
     article.innerHTML = `<div class="cp-heading">${portrait(index)}<div class="cp-title"><div class="cp-role ${special?'cp-role-long':''}">${index<2?'MUAY THAI <b>COACH</b>':special?'PERSONAL TRAINER<br>SPORTS THERAPIST<br>FOOTBALL <b>COACH</b>':'PERSONAL <b>TRAINER</b>'}</div><h3>COACH ${name.toUpperCase()}</h3><p class="cp-languages" aria-label="Languages">${renderLanguages(languages)}</p></div></div>
-      <div class="cp-details"><div class="cp-bio">${(index<2||index>=12)?portrait(index,true):`<h4>QUALIFICATIONS</h4><ul>${qualifications[index].map(q=>`<li>${q}</li>`).join('')}</ul>`}</div><div class="cp-offers"><div><h4>PRIVATE CLASS${special?' (PT)':''}</h4><p><strong>฿${money(price)}</strong> / ${sessions} sessions / person</p><p>Expires in ${expiry}<br>1 person</p></div><div><h4>${special?'SPORTS THERAPIST':'GROUP CLASS'}</h4>${special?'<p>฿1,200 / session / person</p>':''}<p><strong>฿${money(group)}</strong> / ${groupSessions} sessions / person</p><p>Expires in ${groupExpiry}<br>${people} ${people==='1'?'person':'persons'}</p></div></div></div>
+      <div class="cp-details"><div class="cp-bio">${name==='Boon'?'':(index<2||index>=12)?portrait(index,true):`<h4>QUALIFICATIONS</h4><ul>${qualifications[index].map(q=>`<li>${q}</li>`).join('')}</ul>`}</div><div class="cp-offers"><div><h4>PRIVATE CLASS${special?' (PT)':''}</h4><p><strong>฿${money(price)}</strong> / ${sessions} sessions / person</p><p>Expires in ${expiry}<br>1 person</p></div><div><h4>${special?'SPORTS THERAPIST':'GROUP CLASS'}</h4>${special?'<p>฿1,200 / session / person</p>':''}<p><strong>฿${money(group)}</strong> / ${groupSessions} sessions / person</p><p>Expires in ${groupExpiry}<br>${people} ${people==='1'?'person':'persons'}</p></div></div></div>
       <div class="cp-single">1 TIME &nbsp; ฿${money(single)} / PERSON</div>
       <div class="cp-contacts"><strong>CONTACT US</strong><a href="https://line.me/ti/p/~${encodeURIComponent(line)}" target="_blank" rel="noopener noreferrer" aria-label="Contact Coach ${name} on LINE"><span class="cp-icon">LINE</span><span>${line}</span></a><a href="https://wa.me/${phone}" target="_blank" rel="noopener noreferrer" aria-label="Contact Coach ${name} on WhatsApp"><span class="cp-icon" aria-hidden="true">☎</span><span>+${phone}</span></a></div>
       ${expanded?'':`<button class="cp-expand" type="button" aria-label="Enlarge Coach ${name}'s profile"></button>`}`;
