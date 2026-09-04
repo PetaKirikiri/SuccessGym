@@ -29,6 +29,10 @@
     ['5th Thailand International Elite Physique championship (2022)','3rd PCA Thailand Model (2022)','3rd PCA Thailand Masters (2022)','1st Thailand Southern (2025)','5th MR. Thailand (2026)','Anatomy for massage (2022)','National bodybuilding coaching Certificate course (NBCC 2026)','X4TRO coaching Diploma Program Padel (2026)']
   ];
   const money = value => typeof value === 'number' ? value.toLocaleString('en-US') : value;
+  const languageFlags = { Thai: '🇹🇭', English: '🇬🇧', Filipino: '🇵🇭', Italian: '🇮🇹' };
+  const renderLanguages = languages => languages.split(', ').map(language =>
+    `<span class="cp-language-flag" role="img" aria-label="${language}" title="${language}">${languageFlags[language]}</span>`
+  ).join('');
   // Each photo has its own source rectangle; only the human photograph is shown.
   function portrait(index, second = false) {
     if (index >= 12) {
@@ -46,7 +50,7 @@
     article.className = 'cp-card';
     if (!expanded) article.classList.add('cp-card-clickable');
     article.dataset.coach = name;
-    article.innerHTML = `<div class="cp-heading">${portrait(index)}<div class="cp-title"><div class="cp-role ${special?'cp-role-long':''}">${index<2?'MUAY THAI <b>COACH</b>':special?'PERSONAL TRAINER<br>SPORTS THERAPIST<br>FOOTBALL <b>COACH</b>':'PERSONAL <b>TRAINER</b>'}</div><h3>COACH ${name.toUpperCase()}</h3><p class="cp-languages">${languages}</p></div></div>
+    article.innerHTML = `<div class="cp-heading">${portrait(index)}<div class="cp-title"><div class="cp-role ${special?'cp-role-long':''}">${index<2?'MUAY THAI <b>COACH</b>':special?'PERSONAL TRAINER<br>SPORTS THERAPIST<br>FOOTBALL <b>COACH</b>':'PERSONAL <b>TRAINER</b>'}</div><h3>COACH ${name.toUpperCase()}</h3><p class="cp-languages" aria-label="Languages">${renderLanguages(languages)}</p></div></div>
       <div class="cp-details"><div class="cp-bio">${(index<2||index>=12)?portrait(index,true):`<h4>QUALIFICATIONS</h4><ul>${qualifications[index].map(q=>`<li>${q}</li>`).join('')}</ul>`}</div><div class="cp-offers"><div><h4>PRIVATE CLASS${special?' (PT)':''}</h4><p><strong>฿${money(price)}</strong> / ${sessions} sessions / person</p><p>Expires in ${expiry}<br>1 person</p></div><div><h4>${special?'SPORTS THERAPIST':'GROUP CLASS'}</h4>${special?'<p>฿1,200 / session / person</p>':''}<p><strong>฿${money(group)}</strong> / ${groupSessions} sessions / person</p><p>Expires in ${groupExpiry}<br>${people} ${people==='1'?'person':'persons'}</p></div></div></div>
       <div class="cp-single">1 TIME &nbsp; ฿${money(single)} / PERSON</div>
       <div class="cp-contacts"><strong>CONTACT US</strong><a href="https://line.me/ti/p/~${encodeURIComponent(line)}" target="_blank" rel="noopener noreferrer" aria-label="Contact Coach ${name} on LINE"><span class="cp-icon">LINE</span><span>${line}</span></a><a href="https://wa.me/${phone}" target="_blank" rel="noopener noreferrer" aria-label="Contact Coach ${name} on WhatsApp"><span class="cp-icon" aria-hidden="true">☎</span><span>+${phone}</span></a></div>

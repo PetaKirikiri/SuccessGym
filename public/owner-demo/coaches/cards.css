@@ -4,7 +4,8 @@
 .cp-photo{display:block;width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:2px solid #cbd5e1}
 .cp-title{text-align:center;min-width:0}.cp-role{font-size:7.5cqw;line-height:1.03;font-weight:900;letter-spacing:-.04em}.cp-role b{color:red;display:block;font-size:1.2em}.cp-role-long{font-size:4.1cqw;line-height:1.2}.cp-role-long b{display:inline;font-size:inherit}
 .cp-title h3{background:#f00000;clip-path:polygon(6% 0,100% 0,100% 100%,6% 100%,0 50%);padding:8px 4px 8px 13px;margin:10px -10px 0 0;font-size:5cqw;font-style:italic;line-height:1.1;letter-spacing:-.025em}
-.cp-languages{font-size:2.8cqw;color:#e4e4e7;margin:10px 0 0;line-height:1.4}
+.cp-languages{display:flex;justify-content:center;align-items:center;gap:8px;margin:10px 0 0;line-height:1}
+.cp-language-flag{font-size:6cqw;display:inline-block;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
 .cp-details{display:grid;grid-template-columns:44% 1fr;gap:7px;flex:1}.cp-bio,.cp-offers{border:1px solid #bbb;padding:7px;min-width:0}.cp-bio:has(.cp-photo){border:0;padding:0;display:flex;align-items:center}
 .cp-card h4{font-size:3.5cqw;letter-spacing:-.02em;margin:0 0 7px;line-height:1.15}.cp-bio ul{padding-left:12px;margin:0;font-size:2.65cqw;line-height:1.4;color:#ddd}.cp-bio li+li{margin-top:3px}.cp-offers{display:flex;flex-direction:column;justify-content:space-between;gap:16px}.cp-offers p{font-size:3cqw;line-height:1.45;margin:5px 0;color:#ddd}.cp-offers strong{color:#fff}
 .cp-single{background:#f00000;clip-path:polygon(0 0,94% 0,100% 50%,94% 100%,0 100%);padding:10px 18px 10px 7px;margin:14px 12% 10px -10px;font-size:3.6cqw;font-weight:900;white-space:nowrap}
