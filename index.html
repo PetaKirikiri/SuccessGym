@@ -125,8 +125,19 @@
     .coach-package small { display: block; margin-top: 7px; color: #71717a; line-height: 1.5; }
     .coach-contact { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
     .coach-contact a { padding: 10px 13px; border: 1px solid #ffffff18; color: #d4d4d8; font-size: 10px; font-weight: 900; letter-spacing: .04em; }
-    .coach-poster { overflow: hidden; border: 1px solid #ffffff18; background: #050505; }
+    .coach-poster { position: relative; overflow: hidden; border: 1px solid #ffffff18; background: #050505; }
     .coach-poster img { display: block; width: 100%; height: auto; }
+    .coach-poster-image { position: absolute; z-index: 1; inset: 0; cursor: zoom-in; outline: 0; }
+    .coach-poster > img { transition: transform .25s ease, opacity .25s ease; }
+    .coach-poster-image:hover + img,.coach-poster-image:focus-visible + img { transform: scale(1.015); opacity: .9; }
+    .coach-poster-image:focus-visible { box-shadow: inset 0 0 0 3px #ef4444; }
+    .coach-contact-hotspot { position: absolute; z-index: 2; bottom: 1.1%; height: 7.7%; border-radius: 6px; outline: 0; transition: background .18s ease, box-shadow .18s ease, transform .18s ease; }
+    .coach-contact-line,.coach-contact-hotspot.line { left: 30.2%; width: 33.8%; }
+    .coach-contact-whatsapp,.coach-contact-hotspot.whatsapp { left: 65%; width: 33.5%; }
+    .coach-contact-hotspot.whatsapp { display: block; margin: 0; padding: 0; background: transparent; color: inherit; font-size: inherit; letter-spacing: normal; text-transform: none; }
+    .coach-contact-hotspot::after { content: attr(data-label); position: absolute; inset: 50% auto auto 50%; padding: 7px 9px; border-radius: 4px; background: #050505e8; color: #fff; font-size: 9px; font-weight: 950; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; opacity: 0; transform: translate(-50%,-42%); transition: opacity .18s ease, transform .18s ease; pointer-events: none; }
+    .coach-contact-hotspot:hover,.coach-contact-hotspot:focus-visible { background: #dc262626; box-shadow: inset 0 0 0 2px #ef4444, 0 0 18px #dc262655; transform: translateY(-1px); }
+    .coach-contact-hotspot:hover::after,.coach-contact-hotspot:focus-visible::after { opacity: 1; transform: translate(-50%,-50%); }
     .map-grid { display: grid; grid-template-columns: .65fr 1.35fr; border: 1px solid #ffffff18; background: #0d0d0d; }
     .map-copy { padding: 42px; display: flex; flex-direction: column; justify-content: space-between; }
     .map-copy h2 { font-size: clamp(42px,5vw,68px); }
@@ -180,6 +191,8 @@
     }
     @media (max-width: 480px) { .journey,.schedule-grid { grid-template-columns: 1fr; } .coach-card { grid-template-columns: 94px minmax(0,1fr); padding: 20px; gap: 18px; } .coach-photos,.coach-photo { width: 94px; } .coach-name { font-size: 27px; } .coach-packages { grid-template-columns: 1fr; } }
   </style>
+  <link rel="stylesheet" href="/owner-demo/coaches/cards.css" />
+  <script defer src="/owner-demo/coaches/cards.js"></script>
 </head>
 <body>
   <header class="nav"><div class="wrap nav-in"><a class="brand" href="#home"><img class="mark" src="/owner-demo/success-gym-wolf-mark.png" alt="Success Gym wolf emblem" /><span>Success<span class="red">Gym</span></span></a><nav class="nav-actions" aria-label="Page navigation"><a class="nav-link" data-tab="prices" href="#prices"><img src="/owner-demo/icons/circle-dot.svg" alt="" />Prices</a><a class="nav-link" data-tab="coaches" href="#coaches"><img src="/owner-demo/icons/person-standing.svg" alt="" />Coaches</a><a class="nav-link" data-tab="classes" href="#classes"><img src="/owner-demo/icons/pilates.svg" alt="" />Classes</a><a class="nav-link" data-tab="clubs" href="#clubs"><img src="/owner-demo/icons/padel-racket.svg" alt="" />Clubs</a><a class="nav-link" data-tab="food" href="#food"><img src="/owner-demo/icons/food.svg" alt="" />Food</a><a class="nav-link" data-tab="contact" href="#contact"><img src="/owner-demo/icons/hand-heart.svg" alt="" />Contact</a></nav></div></header>
@@ -247,20 +260,7 @@
 
     <section class="section alt page-view" data-page="coaches" id="coaches"><div class="wrap">
       <div class="intro"><div><p class="eyebrow">Personal Training</p><h2>Meet your<br /><span class="red">coaches.</span></h2></div><p class="intro-copy">Professional personal training with private and small-group packages.</p></div>
-      <div class="coach-grid">
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-1.jpg" alt="Coach Bia profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-2.jpg" alt="Coach Bert profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-3.jpg" alt="Coach Beat profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-4.jpg" alt="Coach Naw profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-5.jpg" alt="Coach Kim profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-6.jpg" alt="Coach Kwan profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-7.jpg" alt="Coach Pana profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-8.jpg" alt="Coach Owen profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-9.jpg" alt="Coach Nueng profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-10.jpg" alt="Coach Best profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-11.jpg" alt="Coach Pino profile and training prices" /></figure>
-        <figure class="coach-poster"><img src="/owner-demo/coaches/posters/coach-12.jpg" alt="Coach Ann profile and training prices" /></figure>
-      </div>
+      <div class="coach-grid"></div>
     </div></section>
 
     <section class="section page-view" data-page="contact" id="location"><div class="wrap map-grid">
