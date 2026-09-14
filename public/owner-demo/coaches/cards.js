@@ -2,7 +2,7 @@
   const base = new URL('.', document.currentScript.src);
   const rows = [
     ['Bia','nongtangmo20','66952632882','Thai, English',9500,10,'5 weeks',5500,5,'4 weeks','1',1200],
-    ['Bert','nongtangmo20','66952632882','Thai, English',9500,10,'5 weeks',5500,5,'4 weeks','1',1200],
+    ['Bert','begoodguy9','66909193462','Thai, English',9500,10,'5 weeks',5500,5,'4 weeks','1',1200],
     ['Beat','kraisak-06','66641955997','Thai',7500,12,'5 weeks',4500,12,'5 weeks','2–3',900],
     ['Naw','0865535204','66865535204','Thai',9000,15,'60 days',6000,15,'45 days','2',900],
     ['Kim','wakim2531','66801485539','Thai, English',10000,12,'5 weeks',5000,12,'5 weeks','2–4',1000],
@@ -14,7 +14,7 @@
     ['Pino','pinothai','66842684966','Thai, English, Italian',10000,12,'4 weeks',5000,12,'4 weeks','3–4',1000],
     ['Ann','annie0918208415','66623462477','Thai, English',12500,15,'5 weeks',7500,15,'5 weeks','2–3',1300],
     ['Tong',null,'66828356425','Thai, English',9000,12,'5 weeks',6000,12,'2 weeks','2',1000],
-    ['Boon','somboonasa','66826259397','Thai, English',10000,10,'5 weeks',7000,10,'2 weeks','2',1200],
+    ['Boon','somboonasa','66826259397','Thai, English',10000,10,'5 weeks',7000,10,'5 weeks','2',1200],
   ];
   const qualifications = [[],[],
     ['Fitness Nutrition Specialist','Sports Nutrition for Bodybuilders','Breathing Techniques for Exercise','Bodybuilding for All Ages – Certified by the Bodybuilding and Fitness Association of Thailand'],
@@ -37,6 +37,7 @@
   function portrait(index, second = false) {
     if (index >= 12) {
       const name = rows[index][0];
+      if (name === 'Tong' && second) return `<img class="cp-photo" src="${new URL('coach-tong-gym.png',base)}" alt="Coach Tong with a gym background" />`;
       return `<img class="cp-photo" src="${new URL(`coach-${name.toLowerCase()}${second||name==='Boon'?'-2':''}.jpg`,base)}" alt="Coach ${name} ${second?'second photo':'portrait'}" />`;
     }
     const y = second ? 443 : 28;

@@ -228,9 +228,9 @@
         <article class="schedule-day"><h3>Tuesday</h3><div class="class-slot"><span class="class-time">9:00 AM</span><strong class="class-name">Pilates Mat</strong><span class="class-coach">Coach Tae</span></div><div class="class-slot"><span class="class-time">10:00 AM</span><strong class="class-name">TRX Class</strong><span class="class-coach">Coach Owen</span></div></article>
         <article class="schedule-day"><h3>Wednesday</h3><div class="class-slot"><span class="class-time">9:00 AM</span><strong class="class-name">Lady Muay Thai</strong><span class="class-coach">Coach Bird</span></div></article>
         <article class="schedule-day"><h3>Thursday</h3><div class="class-slot"><span class="class-time">9:00 AM</span><strong class="class-name">Yoga</strong><span class="class-coach">Coach Mook</span></div><div class="class-slot"><span class="class-time">10:00 AM</span><strong class="class-name">Functional Workout</strong><span class="class-coach">Coach Owen</span></div></article>
-        <article class="schedule-day"><h3>Friday</h3><div class="class-slot"><span class="class-time">10:00 AM</span><strong class="class-name">Trampoline Bounder Class</strong><span class="class-coach">Coach Owen</span></div><div class="class-slot"><span class="class-time">11:00 AM</span><strong class="class-name">Stretching Class</strong><span class="class-coach">Coach Pino</span></div></article>
+        <article class="schedule-day"><h3>Friday</h3><div class="class-slot"><span class="class-time">9:00 AM</span><strong class="class-name">Zumba Class</strong><span class="class-coach">Coach Lookprae</span></div><div class="class-slot"><span class="class-time">10:00 AM</span><strong class="class-name">Trampoline Bounder Class</strong><span class="class-coach">Coach Owen</span></div><div class="class-slot"><span class="class-time">11:00 AM</span><strong class="class-name">Stretching Class</strong><span class="class-coach">Coach Pino</span></div></article>
       </div>
-      <div class="schedule-rules"><span class="schedule-start">Schedule begins 10 August 2026.</span><br />Classes with fewer than three attendees may be cancelled. No advance registration is required. Participation is first-come, first-served. Some classes have limited equipment, so arriving early is recommended. Advance reservations are not accepted.</div>
+      <div class="schedule-rules"><span class="schedule-start">Schedule begins 10 September 2026.</span><br />Classes with fewer than three attendees will be cancelled. No advance registration is required. Participation is first-come, first-served. Some classes have limited equipment, so arriving early is recommended. Advance reservations are not accepted.</div>
     </div></section>
 
     <section class="section alt page-view" data-page="prices" id="prices"><div class="wrap">
@@ -269,6 +269,10 @@
     </div></section>
 
     <section class="section alt page-view" data-page="food"><div class="wrap">
+      <div class="food-menu-switch" aria-label="Choose a menu">
+        <button type="button" data-food-menu="meals" aria-pressed="true">Food</button>
+        <button type="button" data-food-menu="cafe" aria-pressed="false">Coffee &amp; Drinks</button>
+      </div>
       <section class="digital-menu" id="food" aria-label="Muscle Bistro menu">
         <details class="menu-category" open><summary>Breakfast</summary><div class="menu-items">
           <div class="menu-item"><strong><span class="code">B1</span>Granola Cup</strong><span class="price">฿180</span><small>Seasonal fresh fruit, yogurt and homemade granola.</small></div>
@@ -331,6 +335,7 @@
           <div class="menu-item"><strong>Chili Fish Sauce</strong><span class="price">฿5</span></div><div class="menu-item"><strong>Thai Spicy Dipping Sauce</strong><span class="price">฿15</span></div><div class="menu-item"><strong>Seafood Sauce</strong><span class="price">฿20</span></div><div class="menu-item"><strong>Ketchup</strong><span class="price">฿20</span></div><div class="menu-item"><strong>Spicy Sriracha</strong><span class="price">฿25</span></div><div class="menu-item"><strong>Teriyaki Sauce</strong><span class="price">฿25</span></div><div class="menu-item"><strong>Sriracha Mayo</strong><span class="price">฿25</span></div><div class="menu-item"><strong>Demi-glace</strong><span class="price">฿25</span></div><div class="menu-item"><strong>BBQ Sauce</strong><span class="price">฿25</span></div><div class="menu-item"><strong>Japanese Sesame</strong><span class="price">฿25</span></div><div class="menu-item"><strong>Garlic Coriander</strong><span class="price">฿35</span></div><div class="menu-item"><strong>Spicy Aioli</strong><span class="price">฿35</span></div><div class="menu-item"><strong>Caesar Sauce</strong><span class="price">฿35</span></div><div class="menu-item"><strong>Cashew Nut Sauce</strong><span class="price">฿35</span></div><div class="menu-item"><strong>Balsamic</strong><span class="price">฿45</span></div>
         </div></details>
       </section>
+      <success-cafe-menu hidden></success-cafe-menu>
       <section class="meal-plan" aria-labelledby="meal-plan-title">
         <div><p class="eyebrow">Muscle Bistro</p><h3 id="meal-plan-title">Weekly meal <span class="red">plans.</span></h3><p>Contact Muscle Bistro for meal-plan information and ordering.</p></div>
         <a class="whatsapp" href="https://wa.me/66915822001" target="_blank" rel="noreferrer">Order on WhatsApp</a>
@@ -340,6 +345,24 @@
     <section class="close page-view" data-page="home"><div class="wrap close-in"><div><p class="eyebrow" style="color:#0008">Success Gym Samui</p><h2>Train. Perform.<br />Recover. Transform.</h2><p style="font-weight:800;font-size:18px">Success Gym — Your Complete Fitness &amp; Wellness Destination in Koh Samui.</p></div><a href="#home">Back to top ↑</a></div></section>
   </main>
   <footer><div class="wrap">Private owner concept · Success Gym Samui</div></footer>
+  <script type="module" src="/owner-demo/cafe.js"></script>
+  <style>
+    success-cafe-menu { display:block; }
+    [data-page="food"] [hidden] { display:none !important; }
+    .food-menu-switch { display:flex; gap:10px; margin-bottom:24px; }
+    .food-menu-switch button { border:1px solid #333; border-radius:10px; padding:12px 22px; background:#111; color:#bbb; font:inherit; font-weight:800; cursor:pointer; }
+    .food-menu-switch button[aria-pressed="true"] { background:#ef4444; border-color:#ef4444; color:#fff; }
+    .food-menu-switch button:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+    .cafe-heading { margin-bottom:18px; }
+    .cafe-photo-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-bottom:28px; }
+    .cafe-photo { position:relative; aspect-ratio:1; overflow:hidden; border-radius:24px; background:#151515; }
+    .cafe-photo img { position:absolute; width:250.2655%; max-width:none; height:auto; left:-14.5133%; }
+    @media (max-width:600px) { .cafe-photo-gallery { gap:8px; } .cafe-photo { border-radius:14px; } }
+    .cafe-heading h3 { margin:0 0 8px; font-size:24px; font-weight:950; text-transform:uppercase; }
+    .cafe-heading p { margin:0; color:#8b8b91; font-size:14px; line-height:1.8; }
+    .cafe-heading a { display:inline-block; margin-left:16px; color:#eee; text-decoration:underline; text-underline-offset:4px; }
+    .cafe-heading a:hover, .cafe-heading a:focus-visible { color:#ef4444; }
+  </style>
   <script>
     const pageNames = new Set(['home','clubs','classes','coaches','prices','food','contact']);
     const pageTitles = { home:'Success Gym Samui', clubs:'Success Clubs', classes:'Classes', coaches:'Coaches', prices:'Prices', food:'Muscle Bistro', contact:'Contact & Location' };
@@ -357,6 +380,15 @@
     }
     window.addEventListener('hashchange', showPage);
     showPage();
+    document.querySelectorAll('[data-food-menu]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const cafe = button.dataset.foodMenu === 'cafe';
+        document.querySelector('#food').hidden = cafe;
+        document.querySelector('success-cafe-menu').hidden = !cafe;
+        document.querySelector('.meal-plan').hidden = cafe;
+        document.querySelectorAll('[data-food-menu]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      });
+    });
 
     // Individual dish photography will be added here once the original source
     // photos are supplied. Flattened printed-menu composites do not produce
