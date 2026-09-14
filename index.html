@@ -263,7 +263,18 @@
       <div class="coach-grid"></div>
     </div></section>
 
-    <section class="section page-view" data-page="contact" id="location"><div class="wrap map-grid">
+    <section class="section page-view" data-page="contact" id="location">
+      <div class="wrap contact-details">
+        <div class="intro"><div><p class="eyebrow">Get in touch</p><h2>Contact <span class="red">us.</span></h2></div><p class="intro-copy">Open daily · 6:00 AM–9:00 PM</p></div>
+        <div class="contact-grid">
+          <article class="contact-card"><h3>Phone · WhatsApp · LINE</h3><p>+66 65 402 0088</p><div class="contact-actions"><a href="tel:+66654020088">Call us</a><a href="https://wa.me/message/EFQ4AIADKJJLE1?src=qr" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="https://line.me/ti/p/Ce7qTRjV2y" target="_blank" rel="noopener noreferrer">LINE ↗</a></div></article>
+          <article class="contact-card"><h3>Email</h3><a class="contact-value" href="mailto:successgymsamui@gmail.com">successgymsamui@gmail.com</a></article>
+          <article class="contact-card"><h3>Instagram</h3><a class="contact-value" href="https://www.instagram.com/successgymsamui/" target="_blank" rel="noopener noreferrer">@successgymsamui ↗</a></article>
+          <article class="contact-card"><h3>Facebook</h3><a class="contact-value" href="https://www.facebook.com/share/1JjunVxdzw/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">SuccessGym ↗</a></article>
+        </div>
+        <div class="contact-community"><h3>Success Gym Community</h3><div class="contact-actions"><a href="https://line.me/ti/g/d4NrKq5j_N" target="_blank" rel="noopener noreferrer">Join on LINE ↗</a><a href="https://chat.whatsapp.com/Ja3JinLOL0R9Sj9Mh2UdKX?s=qs&amp;p=i&amp;mlu=4&amp;amv=0" target="_blank" rel="noopener noreferrer">Join on WhatsApp ↗</a></div></div>
+      </div>
+      <div class="wrap map-grid">
       <div class="map-copy"><div><p class="eyebrow">Location</p><h2>Success Gym<br /><span style="color:#52525b">Samui.</span></h2></div><p class="map-note">83/22 Soi Hat Chaweng 4, Bo Phut, Koh Samui, Surat Thani 84320<br /><br />Chaweng Lake</p></div>
       <div class="map"><iframe src="https://maps.google.com/maps?q=9.5363299,100.0548455&amp;z=14&amp;t=k&amp;output=embed" title="Satellite map of Success Gym and Chaweng Lake" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><div class="map-label">Success Gym · Chaweng</div></div>
     </div></section>
@@ -347,6 +358,18 @@
   <footer><div class="wrap">Private owner concept · Success Gym Samui</div></footer>
   <script type="module" src="/owner-demo/cafe.js"></script>
   <style>
+    .contact-details { margin-bottom:32px; }
+    .contact-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .contact-card,.contact-community { padding:24px; border:1px solid #292929; border-radius:18px; background:#101010; }
+    .contact-card h3,.contact-community h3 { margin:0 0 14px; font-size:14px; color:#aaa; text-transform:uppercase; letter-spacing:.08em; }
+    .contact-card p,.contact-value { margin:0; font-size:20px; font-weight:700; overflow-wrap:anywhere; }
+    .contact-card small { display:block; margin-top:14px; color:#999; }
+    .contact-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .contact-actions a { display:inline-block; padding:11px 18px; border:1px solid #494949; border-radius:9px; font-weight:700; }
+    .contact-actions a:hover,.contact-actions a:focus-visible { background:#ef4444; border-color:#ef4444; color:#fff; }
+    .contact-value:hover { color:#ef4444; }
+    .contact-community { margin-top:16px; }
+    @media(max-width:600px) { .contact-grid { grid-template-columns:1fr; } }
     success-cafe-menu { display:block; }
     [data-page="food"] [hidden] { display:none !important; }
     .food-menu-switch { display:flex; gap:10px; margin-bottom:24px; }
