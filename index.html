@@ -197,6 +197,7 @@
 <body>
   <header class="nav"><div class="wrap nav-in"><a class="brand" href="#home"><img class="mark" src="/owner-demo/success-gym-wolf-mark.png" alt="Success Gym wolf emblem" /><span>Success<span class="red">Gym</span></span></a><nav class="nav-actions" aria-label="Page navigation"><a class="nav-link" data-tab="prices" href="#prices"><img src="/owner-demo/icons/circle-dot.svg" alt="" />Prices</a><a class="nav-link" data-tab="coaches" href="#coaches"><img src="/owner-demo/icons/person-standing.svg" alt="" />Coaches</a><a class="nav-link" data-tab="classes" href="#classes"><img src="/owner-demo/icons/pilates.svg" alt="" />Classes</a><a class="nav-link" data-tab="clubs" href="#clubs"><img src="/owner-demo/icons/padel-racket.svg" alt="" />Clubs</a><a class="nav-link" data-tab="food" href="#food"><img src="/owner-demo/icons/food.svg" alt="" />Food</a><a class="nav-link" data-tab="contact" href="#contact"><img src="/owner-demo/icons/hand-heart.svg" alt="" />Contact</a></nav></div></header>
   <main>
+    <section class="section page-view" data-page="gallery" id="gallery"><div class="wrap"><p class="eyebrow">Success Gym Samui</p><h2>Photo gallery.</h2><gym-gallery></gym-gallery></div></section>
     <section class="hero page-view" data-page="home" id="top">
       <img class="hero-bg" src="/success-gym-facilities.png" alt="Success Gym training floor" />
       <div class="hero-shade"></div>
@@ -252,6 +253,7 @@
           <div class="membership-row"><strong>Day Pass</strong><span>฿200</span></div>
           <div class="membership-row"><strong>10 Visits · Valid 90 days</strong><span>฿850</span></div>
           <div class="membership-row"><strong>1 Month</strong><span>฿1,200</span></div>
+          <p class="membership-note"><strong>ID card / Passport Required</strong></p>
           <p class="membership-note">Memberships are for personal use and are non-transferable. Please keep your receipt for your records. Breach of membership conditions may result in termination.</p>
           <p class="opening-hours"><a href="tel:+66654020088">+66 65 402 0088</a></p>
         </div>
@@ -387,8 +389,14 @@
     .cafe-heading a:hover, .cafe-heading a:focus-visible { color:#ef4444; }
   </style>
   <script>
-    const pageNames = new Set(['home','clubs','classes','coaches','prices','food','contact']);
-    const pageTitles = { home:'Success Gym Samui', clubs:'Success Clubs', classes:'Classes', coaches:'Coaches', prices:'Prices', food:'Muscle Bistro', contact:'Contact & Location' };
+    const galleryLink = document.createElement('a');
+    galleryLink.className = 'nav-link';
+    galleryLink.dataset.tab = 'gallery';
+    galleryLink.href = '#gallery';
+    galleryLink.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 6-6 4 4 3-3 5 5"/></svg>Gallery';
+    document.querySelector('[data-tab="contact"]').before(galleryLink);
+    const pageNames = new Set(['home','clubs','classes','coaches','prices','food','gallery','contact']);
+    const pageTitles = { home:'Success Gym Samui', clubs:'Success Clubs', classes:'Classes', coaches:'Coaches', prices:'Prices', food:'Muscle Bistro', gallery:'Photo Gallery', contact:'Contact & Location' };
     function showPage() {
       const requested = location.hash.slice(1);
       const pathPage = location.pathname.replace(/^\/+|\/+$/g, '');
@@ -428,5 +436,7 @@
       codeNode.closest('.menu-item').prepend(image);
     });
   </script>
+  <link rel="stylesheet" href="/gallery.css" />
+  <script src="/gallery.js" defer></script>
 </body>
 </html>
