@@ -15,6 +15,8 @@ CACHE.mkdir(exist_ok=True)
 OUT = ROOT / 'public/gallery'
 OUT.mkdir(exist_ok=True)
 photos = json.loads((ROOT / 'public/gallery-albums.json').read_text())[0]['photos']
+if any(photo.get('rawId') for photo in photos):
+    raise SystemExit('This gallery uses RAW sources. Use develop-gallery-raw.py instead.')
 
 def prepare(photo):
     source = CACHE / photo['name']
