@@ -37,7 +37,7 @@
   function portrait(index, second = false) {
     if (index >= 12) {
       const name = rows[index][0];
-      if (name === 'Tong' && second) return `<img class="cp-photo" src="${new URL('coach-tong-gym.png',base)}" alt="Coach Tong with a gym background" />`;
+      if (name === 'Tong') return `<svg class="cp-photo" viewBox="${second ? '22 450' : '28 28'} 376 376" role="img" aria-label="Coach Tong ${second ? 'playing padel' : 'portrait'}"><image href="${new URL('coach-tong-updated.png',base)}" width="1080" height="1080" /></svg>`;
       return `<img class="cp-photo" src="${new URL(`coach-${name.toLowerCase()}${second||name==='Boon'?'-2':''}.jpg`,base)}" alt="Coach ${name} ${second?'second photo':'portrait'}" />`;
     }
     const y = second ? 443 : 28;
