@@ -92,6 +92,9 @@
     .num { color: #ef4444; font-size: 11px; font-weight: 950; }
     .journey h3 { margin: 0; font-size: 27px; line-height: 1; letter-spacing: -.04em; text-transform: uppercase; }
     .journey p { color: #71717a; font-size: 14px; line-height: 1.6; }
+    .schedule-link { display: inline-flex; align-items: center; gap: 16px; margin-top: 32px; padding: 18px 26px; border-radius: 10px; background: #dc2626; color: #fff; font-weight: 800; text-decoration: none; transition: background .2s, transform .2s; }
+    .schedule-link:hover { background: #b91c1c; transform: translateY(-2px); }
+    .schedule-link:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
     .schedule-grid { margin-top: 52px; display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
     .schedule-day { border: 1px solid #ffffff18; border-radius: 18px; background: linear-gradient(145deg,#121212,#080808); overflow: hidden; }
     .schedule-day h3 { margin: 0; padding: 18px; color: #ef4444; border-bottom: 1px solid #ffffff18; font-size: 18px; text-transform: uppercase; }
@@ -223,15 +226,8 @@
     </div></section>
 
     <section class="section page-view" data-page="classes" id="classes"><div class="wrap">
-      <div class="intro"><div><p class="eyebrow">Group Training</p><h2>Weekly class<br /><span class="red">schedule.</span></h2></div><p class="intro-copy">Yoga, Pilates, Muay Thai, strength, mobility, and functional training throughout the week.</p></div>
-      <div class="schedule-grid">
-        <article class="schedule-day"><h3>Monday</h3><div class="class-slot"><span class="class-time">9:00 AM</span><strong class="class-name">Yoga</strong><span class="class-coach">Coach Kim</span></div><div class="class-slot"><span class="class-time">10:00 AM</span><strong class="class-name">Abs &amp; Booty</strong><span class="class-coach">Coach Owen</span></div></article>
-        <article class="schedule-day"><h3>Tuesday</h3><div class="class-slot"><span class="class-time">9:00 AM</span><strong class="class-name">Pilates Mat</strong><span class="class-coach">Coach Tae</span></div><div class="class-slot"><span class="class-time">10:00 AM</span><strong class="class-name">TRX Class</strong><span class="class-coach">Coach Owen</span></div></article>
-        <article class="schedule-day"><h3>Wednesday</h3><div class="class-slot"><span class="class-time">9:00 AM</span><strong class="class-name">Lady Muay Thai</strong><span class="class-coach">Coach Bird</span></div></article>
-        <article class="schedule-day"><h3>Thursday</h3><div class="class-slot"><span class="class-time">9:00 AM</span><strong class="class-name">Yoga</strong><span class="class-coach">Coach Mook</span></div><div class="class-slot"><span class="class-time">10:00 AM</span><strong class="class-name">Functional Workout</strong><span class="class-coach">Coach Owen</span></div></article>
-        <article class="schedule-day"><h3>Friday</h3><div class="class-slot"><span class="class-time">9:00 AM</span><strong class="class-name">Zumba Class</strong><span class="class-coach">Coach Lookprae</span></div><div class="class-slot"><span class="class-time">10:00 AM</span><strong class="class-name">Trampoline Bounder Class</strong><span class="class-coach">Coach Owen</span></div><div class="class-slot"><span class="class-time">11:00 AM</span><strong class="class-name">Stretching Class</strong><span class="class-coach">Coach Pino</span></div></article>
-      </div>
-      <div class="schedule-rules"><span class="schedule-start">Schedule begins 10 September 2026.</span><br />Classes with fewer than three attendees will be cancelled. No advance registration is required. Participation is first-come, first-served. Some classes have limited equipment, so arriving early is recommended. Advance reservations are not accepted.</div>
+      <div class="intro"><div><p class="eyebrow">Group Training</p><h2>Class<br /><span class="red">schedule.</span></h2></div><p class="intro-copy">Find the latest class schedule on our Instagram.</p></div>
+      <a class="schedule-link" href="https://www.instagram.com/successgymsamui/" target="_blank" rel="noopener noreferrer">Check class schedule <span aria-hidden="true">↗</span></a>
     </div></section>
 
     <section class="section alt page-view" data-page="prices" id="prices"><div class="wrap">
